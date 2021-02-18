@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
@@ -18,5 +18,5 @@ public class Tweet {
     private List<Tweet> retweets;
     private List<User> likes;
     private List<Answer> answers;
-    private LocalDate date;
+    private LocalDateTime date;
 }

@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
@@ -18,8 +18,8 @@ public class User {
     private String picture;
     private String description;
     private String localisation;
-    private LocalDate birthdate;
-    private LocalDate createdDate;
+    private LocalDateTime birthdate;
+    private LocalDateTime createdDate;
     private List<User> followers;
     private List<User> following;
 }

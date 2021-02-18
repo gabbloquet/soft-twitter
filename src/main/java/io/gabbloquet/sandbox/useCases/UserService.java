@@ -5,7 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -20,8 +20,8 @@ public class UserService {
             .picture("https://pbs.twimg.com/profile_images/1081348420999221249/GV3sgbxT_400x400.jpg")
             .description("Software Engineer & Front-end community Leader at @Decathlon • Sport \uD83C\uDFC3\uD83C\uDFFC\uD83D\uDEB4\uD83C\uDFFB\u200D♂️• Culture \uD83D\uDCDA\uD83C\uDFAF• Musique \uD83C\uDFB8• Flex-Remote working \uD83D\uDCBB")
             .localisation("Mons-en-Baroeul, France")
-            .birthdate(LocalDate.of(1995, 11, 24))
-            .createdDate(LocalDate.now())
+            .birthdate(LocalDateTime.of(1995, 11, 24))
+            .createdDate(LocalDateTime.now())
             .followers(List.of())
             .following(List.of())
             .build();
