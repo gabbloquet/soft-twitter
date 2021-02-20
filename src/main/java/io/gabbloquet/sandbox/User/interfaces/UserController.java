@@ -1,7 +1,7 @@
-package io.gabbloquet.sandbox.controllers;
+package io.gabbloquet.sandbox.User.interfaces;
 
+import io.gabbloquet.sandbox.User.domain.UserService;
 import io.gabbloquet.sandbox.entities.User;
-import io.gabbloquet.sandbox.useCases.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,4 +1,4 @@
-package io.gabbloquet.sandbox.controllers;
+package io.gabbloquet.sandbox.User.interfaces;
 
 import io.gabbloquet.sandbox.entities.User;
 

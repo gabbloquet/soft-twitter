@@ -1,4 +1,4 @@
-package io.gabbloquet.sandbox.entities;
+package io.gabbloquet.sandbox.User.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -1,4 +1,4 @@
-package io.gabbloquet.sandbox.entities;
+package io.gabbloquet.sandbox.Tweet.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
