@@ -13,6 +13,5 @@ import java.time.LocalDateTime;
 public class Answer {
     private int id;
     private User from;
-    private Tweet tweet;
     private LocalDateTime date;
 }
