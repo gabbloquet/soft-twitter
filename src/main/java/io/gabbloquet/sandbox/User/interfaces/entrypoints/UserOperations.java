@@ -1,6 +1,6 @@
-package io.gabbloquet.sandbox.User.interfaces;
+package io.gabbloquet.sandbox.User.interfaces.entrypoints;
 
-import io.gabbloquet.sandbox.entities.User;
+import io.gabbloquet.sandbox.User.domain.entities.User;
 
 import java.net.http.HttpRequest;
 

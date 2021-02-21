@@ -1,7 +1,7 @@
-package io.gabbloquet.sandbox.Tweet.interfaces;
+package io.gabbloquet.sandbox.Tweet.interfaces.entrypoints;
 
-import io.gabbloquet.sandbox.entities.Tweet;
-import io.gabbloquet.sandbox.entities.User;
+import io.gabbloquet.sandbox.Tweet.domain.entities.Tweet;
+import io.gabbloquet.sandbox.User.domain.entities.User;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

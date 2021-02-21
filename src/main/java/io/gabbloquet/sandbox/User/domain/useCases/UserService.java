@@ -1,9 +1,9 @@
-package io.gabbloquet.sandbox.User.domain;
+package io.gabbloquet.sandbox.User.domain.useCases;
 
-import io.gabbloquet.sandbox.entities.User;
-import lombok.RequiredArgsConstructor;
+import io.gabbloquet.sandbox.User.domain.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

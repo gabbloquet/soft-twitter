@@ -1,6 +1,6 @@
-package io.gabbloquet.sandbox.Tweet.entities;
+package io.gabbloquet.sandbox.Tweet.domain.entities;
 
-import io.gabbloquet.sandbox.User.entities.User;
+import io.gabbloquet.sandbox.User.domain.entities.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
