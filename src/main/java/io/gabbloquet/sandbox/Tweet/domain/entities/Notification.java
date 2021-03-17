@@ -5,13 +5,11 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 
-import java.time.LocalDateTime;
-
 @Data
 @Builder
 @AllArgsConstructor
-public class Answer {
-    private int id;
-    private User from;
-    private LocalDateTime date;
+public class Notification {
+    private Tweet tweet;
+    private User concernedUser;
+    private Boolean isAlreadyRead;
 }

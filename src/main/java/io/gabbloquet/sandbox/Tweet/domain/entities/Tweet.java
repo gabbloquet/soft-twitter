@@ -18,6 +18,6 @@ public class Tweet {
     private List<String> hashtags;
     private List<Tweet> retweets;
     private List<User> likes;
-    private List<Answer> answers;
+    private Tweet linkedTweet;
     private LocalDateTime date;
 }
