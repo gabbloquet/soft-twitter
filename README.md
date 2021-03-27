@@ -17,6 +17,7 @@ I will create similar object, store it, and play with. I will work on a large am
 ## Architecture
 
 I want to apply this kind of architecture.
+
 ![Architecture Diagram](https://cdn-media-1.freecodecamp.org/images/YIABVRTHRz58ZiT6W-emBkfNIQUHBelp8t6U)
 
  - I will be able to split my code nicely.
