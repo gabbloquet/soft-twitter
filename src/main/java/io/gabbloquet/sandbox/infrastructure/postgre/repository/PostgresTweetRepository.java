@@ -6,6 +6,9 @@ import io.gabbloquet.sandbox.infrastructure.postgre.dao.PostgresTweet;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Repository
 @AllArgsConstructor
 public class PostgresTweetRepository implements TweetRepository {
@@ -15,6 +18,14 @@ public class PostgresTweetRepository implements TweetRepository {
     @Override
     public Tweet save(Tweet tweet) {
         return postgresSpringDataTweetRepository.save(PostgresTweet.fromTweet(tweet)).toTweet();
+    }
+
+    @Override
+    public List<Tweet> findAll() {
+        return postgresSpringDataTweetRepository.findAll()
+            .stream()
+            .map(PostgresTweet::toTweet)
+            .collect(Collectors.toList());
     }
 
 //    @Override
