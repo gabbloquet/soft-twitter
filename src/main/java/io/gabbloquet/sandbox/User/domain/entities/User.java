@@ -1,11 +1,14 @@
 package io.gabbloquet.sandbox.User.domain.entities;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.gabbloquet.sandbox.infrastructure.postgre.dao.PostgresUser;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -14,14 +17,17 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class User {
-    private int id;
+
+    private Long id;
     private String name;
     private String username;
     private String mail;
     private String picture;
     private String description;
     private String localisation;
-    private LocalDateTime birthdate;
+
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private LocalDate birthdate;
     private LocalDateTime createdDate;
     private List<User> followers;
     private List<User> following;

@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.UUID;
 
 @Data
 @Builder
@@ -16,7 +15,7 @@ import java.util.UUID;
 @NoArgsConstructor
 public class Tweet {
 
-    private UUID id;
+    private Long id;
     private User user;
     private String message;
     private List<User> likes;
