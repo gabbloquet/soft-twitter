@@ -6,6 +6,9 @@ import io.gabbloquet.sandbox.infrastructure.postgre.dao.PostgresUser;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Repository
 @AllArgsConstructor
 public class PostgresUserRepository implements UserRepository {
@@ -15,6 +18,14 @@ public class PostgresUserRepository implements UserRepository {
     @Override
     public User create(User user) {
         return postgresSpringDataUserRepository.save(PostgresUser.fromUser(user)).toUser();
+    }
+
+    @Override
+    public List<User> findAll() {
+        return postgresSpringDataUserRepository.findAll()
+            .stream()
+            .map(PostgresUser::toUser)
+            .collect(Collectors.toList());
     }
 
     @Override

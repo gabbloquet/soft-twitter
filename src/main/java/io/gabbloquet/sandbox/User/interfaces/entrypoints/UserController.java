@@ -10,9 +10,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.net.http.HttpRequest;
+import java.util.List;
 
 @RestController
 @RequestMapping(path = "/users")
@@ -37,7 +39,12 @@ public class UserController {
     }
 
     @GetMapping()
-    public User get(String userId) {
+    public List<User> getAll() {
+        return userService.getAll();
+    }
+
+    @GetMapping()
+    public User get(@RequestParam(required = false) String id) {
         return null;
     }
 }

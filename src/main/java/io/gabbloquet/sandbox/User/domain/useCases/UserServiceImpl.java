@@ -5,6 +5,8 @@ import io.gabbloquet.sandbox.User.interfaces.providers.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class UserServiceImpl implements UserService {
@@ -14,6 +16,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public User create(User user) {
         return userRepository.create(user);
+    }
+
+    @Override
+    public List<User> getAll() {
+        return userRepository.findAll();
     }
 
     @Override
