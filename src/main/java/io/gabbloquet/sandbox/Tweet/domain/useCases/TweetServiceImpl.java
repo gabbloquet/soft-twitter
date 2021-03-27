@@ -3,8 +3,8 @@ package io.gabbloquet.sandbox.Tweet.domain.useCases;
 import io.gabbloquet.sandbox.Tweet.domain.entities.Tweet;
 import io.gabbloquet.sandbox.Tweet.interfaces.providers.TweetRepository;
 import io.gabbloquet.sandbox.User.domain.entities.User;
-import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import lombok.AllArgsConstructor;
 
 import java.util.List;
 

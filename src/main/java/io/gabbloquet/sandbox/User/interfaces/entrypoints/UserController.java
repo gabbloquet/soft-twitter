@@ -2,6 +2,8 @@ package io.gabbloquet.sandbox.User.interfaces.entrypoints;
 
 import io.gabbloquet.sandbox.User.domain.entities.User;
 import io.gabbloquet.sandbox.User.domain.useCases.UserService;
+import io.gabbloquet.sandbox.User.domain.useCases.UserServiceImpl;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,37 +15,29 @@ import org.springframework.web.bind.annotation.RestController;
 import java.net.http.HttpRequest;
 
 @RestController
-@RequestMapping(path = "/user")
-public class UserController implements UserOperations {
+@RequestMapping(path = "/users")
+@AllArgsConstructor
+public class UserController {
 
     private final UserService userService;
 
-    @Autowired
-    public UserController(UserService userService) {
-        this.userService = userService;
-    }
-
-    @Override
     @PostMapping()
     public User create(User user) {
-        return null;
+        return userService.create(user);
     }
 
-    @Override
     @PatchMapping()
     public User update(User user) {
         return null;
     }
 
-    @Override
     @DeleteMapping()
-    public HttpRequest delete(String userId) {
-        return null;
+    public void delete(String userId) {
+
     }
 
-    @Override
     @GetMapping()
     public User get(String userId) {
-        return this.userService.create();
+        return null;
     }
 }

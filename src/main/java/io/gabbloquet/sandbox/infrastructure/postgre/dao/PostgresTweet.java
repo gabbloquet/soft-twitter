@@ -54,12 +54,12 @@ public class PostgresTweet {
 
     public Tweet toTweet() {
         return new Tweet().builder()
-            .id(this.id)
-            .message(this.message)
-            .user(PostgresUser.toUser(this.user))
-            .likes(this.likes.stream().map(PostgresUser::toUser).collect(Collectors.toList()))
-            .linkedTweet(this.linkedTweet.toTweet())
-            .date(this.date.toLocalDateTime())
+            .id(id)
+            .message(message)
+            .user(user.toUser())
+            .likes(likes.stream().map(PostgresUser::toUser).collect(Collectors.toList()))
+            .linkedTweet(linkedTweet.toTweet())
+            .date(date.toLocalDateTime())
             .build();
     }
 }

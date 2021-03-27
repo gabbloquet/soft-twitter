@@ -43,18 +43,18 @@ public class PostgresUser {
     @ManyToMany
     private List<PostgresUser> following = new ArrayList<>();
 
-    public static User toUser(PostgresUser postgresUser) {
+    public User toUser() {
         return new User().builder()
-            .name(postgresUser.getName())
-            .username(postgresUser.getUsername())
-            .mail(postgresUser.getMail())
-            .picture(postgresUser.getPicture())
-            .description(postgresUser.getDescription())
-            .localisation(postgresUser.getLocalisation())
-            .birthdate(postgresUser.getBirthdate())
-            .createdDate(postgresUser.getCreatedDate())
-            .followers(postgresUser.getFollowers().stream().map(PostgresUser::toUser).collect(Collectors.toList()))
-            .following(postgresUser.getFollowing().stream().map(PostgresUser::toUser).collect(Collectors.toList()))
+            .name(name)
+            .username(username)
+            .mail(mail)
+            .picture(picture)
+            .description(description)
+            .localisation(localisation)
+            .birthdate(birthdate)
+            .createdDate(createdDate)
+            .followers(followers.stream().map(PostgresUser::toUser).collect(Collectors.toList()))
+            .following(following.stream().map(PostgresUser::toUser).collect(Collectors.toList()))
             .build();
     }
 
