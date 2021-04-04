@@ -4,6 +4,7 @@ import io.gabbloquet.sandbox.Tweet.domain.entities.Tweet;
 import io.gabbloquet.sandbox.Tweet.interfaces.providers.TweetRepository;
 import io.gabbloquet.sandbox.infrastructure.postgre.dao.PostgresTweet;
 import lombok.AllArgsConstructor;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.stream.Collectors;
 
 @Repository
 @AllArgsConstructor
+@Profile("sql")
 public class PostgresTweetRepository implements TweetRepository {
 
     private PostgresSpringDataTweetRepository postgresSpringDataTweetRepository;

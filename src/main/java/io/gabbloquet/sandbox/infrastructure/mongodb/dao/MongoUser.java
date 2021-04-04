@@ -9,13 +9,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-//import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-//@Document(name = "users")
+@Document(value = "users")
 @Builder
 public class MongoUser {
 

@@ -4,6 +4,7 @@ import io.gabbloquet.sandbox.User.domain.entities.User;
 import io.gabbloquet.sandbox.User.interfaces.providers.UserRepository;
 import io.gabbloquet.sandbox.infrastructure.postgre.dao.PostgresUser;
 import lombok.AllArgsConstructor;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.stream.Collectors;
 
 @Repository
 @AllArgsConstructor
+@Profile("sql")
 public class PostgresUserRepository implements UserRepository {
 
     private PostgresSpringDataUserRepository postgresSpringDataUserRepository;
