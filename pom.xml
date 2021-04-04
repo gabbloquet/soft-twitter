@@ -11,8 +11,8 @@
 	<groupId>io.gabbloquet</groupId>
 	<artifactId>sandbox</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>sandbox</name>
-	<description>Sandbox project With Java 15</description>
+	<name>Soft Twitter</name>
+	<description>Soft twitter API to practice performance tests between SQL and NoSQL</description>
 
 	<properties>
 		<java.version>15</java.version>
@@ -69,6 +69,12 @@
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
+        </dependency>
+
+        <!-- MongoDB -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
         </dependency>
     </dependencies>
 
