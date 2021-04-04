@@ -22,4 +22,4 @@ I want to apply this kind of architecture.
 
  - I will be able to split my code nicely.
  - I will have 2 **data providers** (blue) => One for SQL, and one for NoSQL.
- - I will create HTTPs **entrypoints** (green), to simulate calls from front for exemple. To do that i will use a tool.
+ - I will create HTTPs **entrypoints** (green), to simulate calls from front for exemple. To do that, i will use a tool which is able to do a lot of calls.
