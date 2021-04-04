@@ -16,10 +16,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 import java.util.stream.Collectors;
-
-import static java.util.UUID.randomUUID;
 
 @Entity
 @Data
@@ -30,7 +27,7 @@ import static java.util.UUID.randomUUID;
 public class PostgresUser {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
     private String name;
     private String username;

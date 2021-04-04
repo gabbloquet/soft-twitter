@@ -1,7 +1,6 @@
 package io.gabbloquet.sandbox.infrastructure.postgre.dao;
 
 import io.gabbloquet.sandbox.Tweet.domain.entities.Tweet;
-import io.gabbloquet.sandbox.User.domain.entities.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,10 +17,7 @@ import java.sql.Timestamp;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 import java.util.stream.Collectors;
-
-import static java.util.UUID.randomUUID;
 
 @Entity
 @Data
@@ -32,7 +28,7 @@ import static java.util.UUID.randomUUID;
 public class PostgresTweet {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
     private String message;
 
