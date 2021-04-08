@@ -23,3 +23,23 @@ I want to apply this kind of architecture.
  - I will be able to split my code nicely.
  - I will have 2 **data providers** (blue) => One for SQL, and one for NoSQL.
  - I will create HTTPs **entrypoints** (green), to simulate calls from front for exemple. To do that, i will use a tool which is able to do a lot of calls.
+
+### Execution
+
+#### Configure Postgres
+
+1. docker pull postgres
+2. docker run --name twitterPostgresDB -e POSTGRES_PASSWORD=password -p 5432:5432 -d postgres
+
+#### Configure Mongo
+
+1. docker pull mongo
+2. docker run -d  --name twitterMongoDB -e MONGO_INITDB_ROOT_USERNAME=mongo -e MONGO_INITDB_ROOT_PASSWORD=password -p 27017:27017 mongo:latest
+
+#### Launch Spring Application
+
+##### SQL
+mvn spring-boot:run -Dspring-boot.run.profiles=sql
+
+##### NoSQL
+mvn spring-boot:run -Dspring-boot.run.profiles=nosql
