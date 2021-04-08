@@ -15,7 +15,7 @@ import javax.persistence.Id;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(value = "tweets")
+@Document(collection = "tweets")
 @Builder
 public class MongoTweet {
 
