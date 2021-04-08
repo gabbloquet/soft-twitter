@@ -6,8 +6,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 @SpringBootApplication
-@EnableJpaRepositories("io")
-@EnableMongoRepositories("io")
+@EnableJpaRepositories("io.gabbloquet.sandbox.infrastructure.postgres")
+@EnableMongoRepositories("io.gabbloquet.sandbox.infrastructure.mongodb")
 public class SandboxApplication {
 
 	public static void main(String[] args) {

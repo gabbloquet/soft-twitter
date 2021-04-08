@@ -1,4 +1,4 @@
-package io.gabbloquet.sandbox.infrastructure.postgre.dao;
+package io.gabbloquet.sandbox.infrastructure.postgres.dao;
 
 import io.gabbloquet.sandbox.User.domain.entities.User;
 import lombok.AllArgsConstructor;

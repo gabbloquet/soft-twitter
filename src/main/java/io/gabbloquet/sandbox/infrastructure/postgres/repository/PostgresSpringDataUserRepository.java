@@ -1,6 +1,6 @@
-package io.gabbloquet.sandbox.infrastructure.postgre.repository;
+package io.gabbloquet.sandbox.infrastructure.postgres.repository;
 
-import io.gabbloquet.sandbox.infrastructure.postgre.dao.PostgresUser;
+import io.gabbloquet.sandbox.infrastructure.postgres.dao.PostgresUser;
 import org.springframework.context.annotation.Profile;
 import org.springframework.data.jpa.repository.JpaRepository;
 

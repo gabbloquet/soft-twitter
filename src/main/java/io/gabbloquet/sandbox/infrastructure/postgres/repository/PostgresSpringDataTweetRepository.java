@@ -1,6 +1,6 @@
-package io.gabbloquet.sandbox.infrastructure.postgre.repository;
+package io.gabbloquet.sandbox.infrastructure.postgres.repository;
 
-import io.gabbloquet.sandbox.infrastructure.postgre.dao.PostgresTweet;
+import io.gabbloquet.sandbox.infrastructure.postgres.dao.PostgresTweet;
 
 import java.util.UUID;
 

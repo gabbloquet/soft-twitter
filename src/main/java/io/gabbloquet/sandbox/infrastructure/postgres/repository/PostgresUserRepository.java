@@ -1,8 +1,8 @@
-package io.gabbloquet.sandbox.infrastructure.postgre.repository;
+package io.gabbloquet.sandbox.infrastructure.postgres.repository;
 
 import io.gabbloquet.sandbox.User.domain.entities.User;
 import io.gabbloquet.sandbox.User.interfaces.providers.UserRepository;
-import io.gabbloquet.sandbox.infrastructure.postgre.dao.PostgresUser;
+import io.gabbloquet.sandbox.infrastructure.postgres.dao.PostgresUser;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
