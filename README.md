@@ -34,7 +34,7 @@ I want to apply this kind of architecture.
 #### Configure Mongo
 
 1. docker pull mongo
-2. docker run -d  --name twitterMongoDB -e MONGO_INITDB_ROOT_USERNAME=mongo -e MONGO_INITDB_ROOT_PASSWORD=password -p 27017:27017 mongo:latest
+2. docker run  --name twitterMongoDB -d mongo:latest
 
 #### Launch Spring Application
 

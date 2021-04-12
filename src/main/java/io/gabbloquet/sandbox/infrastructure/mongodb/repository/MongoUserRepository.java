@@ -2,11 +2,13 @@ package io.gabbloquet.sandbox.infrastructure.mongodb.repository;
 
 import io.gabbloquet.sandbox.User.domain.entities.User;
 import io.gabbloquet.sandbox.User.interfaces.providers.UserRepository;
+import io.gabbloquet.sandbox.infrastructure.mongodb.dao.MongoUser;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Repository
 @AllArgsConstructor
@@ -17,12 +19,15 @@ public class MongoUserRepository implements UserRepository {
 
     @Override
     public User create(User user) {
-        return null;
+        return mongoSpringDataUserRepository.save(MongoUser.fromUser(user)).toUser();
     }
 
     @Override
     public List<User> findAll() {
-        return null;
+        return mongoSpringDataUserRepository.findAll()
+            .stream()
+            .map(MongoUser::toUser)
+            .collect(Collectors.toList());
     }
 
     @Override
