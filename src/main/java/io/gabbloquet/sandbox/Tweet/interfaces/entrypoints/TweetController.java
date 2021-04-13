@@ -33,7 +33,7 @@ public class TweetController {
 
     @GetMapping("/user")
     public List<Tweet> getTweets(User user) {
-        return null;
+        return tweetService.getTweets(user);
     }
 
     @DeleteMapping

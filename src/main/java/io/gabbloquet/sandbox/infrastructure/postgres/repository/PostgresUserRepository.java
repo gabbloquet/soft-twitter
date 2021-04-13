@@ -19,7 +19,7 @@ public class PostgresUserRepository implements UserRepository {
 
     @Override
     public User create(User user) {
-        return postgresSpringDataUserRepository.save(PostgresUser.fromUser(user)).toUser();
+        return postgresSpringDataUserRepository.saveAndFlush(PostgresUser.fromUser(user)).toUser();
     }
 
     @Override

@@ -30,7 +30,7 @@ public class TweetServiceImpl implements TweetService {
 
     @Override
     public List<Tweet> getTweets(User user) {
-        return null;
+        return tweetRepository.find(user);
     }
 
     @Override

@@ -3,13 +3,13 @@ package io.gabbloquet.sandbox.infrastructure.postgres.dao;
 import io.gabbloquet.sandbox.Tweet.domain.entities.Tweet;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -19,8 +19,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static io.gabbloquet.sandbox.infrastructure.postgres.dao.PostgresUser.fromUser;
+
+
 @Entity
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "tweets")
@@ -45,8 +47,9 @@ public class PostgresTweet {
     public static PostgresTweet fromTweet(Tweet tweet) {
         return new PostgresTweet().builder()
             .message(tweet.getMessage())
+            .user(fromUser(tweet.getUser()))
             .likes(tweet.getLikes().stream().map(PostgresUser::fromUser).collect(Collectors.toList()))
-            .linkedTweet(fromTweet(tweet.getLinkedTweet()))
+            .linkedTweet(tweet.getLinkedTweet() != null ? fromTweet(tweet.getLinkedTweet()) : null)
             .date(Timestamp.valueOf(tweet.getDate()))
             .build();
     }
@@ -57,7 +60,7 @@ public class PostgresTweet {
             .message(message)
             .user(user.toUser())
             .likes(likes.stream().map(PostgresUser::toUser).collect(Collectors.toList()))
-            .linkedTweet(linkedTweet.toTweet())
+            .linkedTweet(linkedTweet != null ? linkedTweet.toTweet() : null)
             .date(date.toLocalDateTime())
             .build();
     }

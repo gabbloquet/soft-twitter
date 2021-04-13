@@ -16,6 +16,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static io.gabbloquet.sandbox.infrastructure.mongodb.dao.MongoUser.fromUser;
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -42,6 +44,7 @@ public class MongoTweet {
         if (tweet != null)
             return new MongoTweet().builder()
                 .message(tweet.getMessage())
+                .user(fromUser(tweet.getUser()))
                 .likes(tweet.getLikes().stream().map(MongoUser::fromUser).collect(Collectors.toList()))
                 .linkedTweet(fromTweet(tweet.getLinkedTweet()))
                 .date(Timestamp.valueOf(tweet.getDate()))
@@ -54,7 +57,7 @@ public class MongoTweet {
             return new Tweet().builder()
                 .id(id)
                 .message(message)
-                .user(user != null ? user.toUser() : null)
+                .user(user.toUser())
                 .likes(likes.stream().map(MongoUser::toUser).collect(Collectors.toList()))
                 .linkedTweet(linkedTweet != null ? linkedTweet.toTweet() : null)
                 .date(date.toLocalDateTime())
