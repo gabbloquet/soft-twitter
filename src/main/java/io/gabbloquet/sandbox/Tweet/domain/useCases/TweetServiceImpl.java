@@ -6,6 +6,8 @@ import io.gabbloquet.sandbox.User.domain.entities.User;
 import org.springframework.stereotype.Service;
 import lombok.AllArgsConstructor;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -16,6 +18,8 @@ public class TweetServiceImpl implements TweetService {
 
     @Override
     public Tweet createTweet(Tweet tweet) {
+        tweet.setLikes(new ArrayList<>());
+        tweet.setDate(LocalDateTime.now());
         return tweetRepository.save(tweet);
     }
 

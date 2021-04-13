@@ -24,6 +24,15 @@ I want to apply this kind of architecture.
  - I will have 2 **data providers** (blue) => One for SQL, and one for NoSQL.
  - I will create HTTPs **entrypoints** (green), to simulate calls from front for exemple. To do that, i will use a tool which is able to do a lot of calls.
 
+## Tests 
+
+The goal is to reproduce something like real usage. To do that, I will send a lot of requests.
+Here some common use cases : 
+ - Load news feed. (For a user, activies of people he follows).
+ - Tweet. (Create a tweet, i will simulate a lot of concurent creation).
+ - Load people activity. (For a user, load his last actions, like or tweets for a range of time).
+ - Load response, feed of a tweet. (For a tweet, load all linked tweets).
+
 ### Execution
 
 #### Configure Postgres
@@ -39,7 +48,8 @@ I want to apply this kind of architecture.
 #### Launch Spring Application
 
 ##### SQL
-mvn spring-boot:run -Dspring-boot.run.profiles=sql
+1. mvn spring-boot:run -Dspring-boot.run.profiles=sql
 
 ##### NoSQL
-mvn spring-boot:run -Dspring-boot.run.profiles=nosql
+1. Comment this line : ```@EnableJpaRepositories("io.gabbloquet.sandbox.infrastructure.postgres")``` (in SandboxApplication.java)
+2. mvn spring-boot:run -Dspring-boot.run.profiles=nosql

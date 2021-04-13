@@ -1,7 +1,6 @@
 package io.gabbloquet.sandbox.infrastructure.mongodb.dao;
 
 import io.gabbloquet.sandbox.Tweet.domain.entities.Tweet;
-import io.gabbloquet.sandbox.infrastructure.postgres.dao.PostgresUser;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,8 +8,6 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
@@ -32,32 +29,36 @@ public class MongoTweet {
     private String message;
 
     @ManyToOne
-    private PostgresUser user;
+    private MongoUser user;
 
     @ManyToMany
-    private List<PostgresUser> likes = new ArrayList<>();
+    private List<MongoUser> likes = new ArrayList<>();
 
     @ManyToOne
     private MongoTweet linkedTweet;
     private Timestamp date;
 
     public static MongoTweet fromTweet(Tweet tweet) {
-        return new MongoTweet().builder()
-            .message(tweet.getMessage())
-            .likes(tweet.getLikes().stream().map(PostgresUser::fromUser).collect(Collectors.toList()))
-            .linkedTweet(fromTweet(tweet.getLinkedTweet()))
-            .date(Timestamp.valueOf(tweet.getDate()))
-            .build();
+        if (tweet != null)
+            return new MongoTweet().builder()
+                .message(tweet.getMessage())
+                .likes(tweet.getLikes().stream().map(MongoUser::fromUser).collect(Collectors.toList()))
+                .linkedTweet(fromTweet(tweet.getLinkedTweet()))
+                .date(Timestamp.valueOf(tweet.getDate()))
+                .build();
+        return null;
     }
 
     public Tweet toTweet() {
-        return new Tweet().builder()
-            .id(Long.valueOf(id))
-            .message(message)
-            .user(user.toUser())
-            .likes(likes.stream().map(PostgresUser::toUser).collect(Collectors.toList()))
-            .linkedTweet(linkedTweet.toTweet())
-            .date(date.toLocalDateTime())
-            .build();
+        if (this != null)
+            return new Tweet().builder()
+                .id(id)
+                .message(message)
+                .user(user != null ? user.toUser() : null)
+                .likes(likes.stream().map(MongoUser::toUser).collect(Collectors.toList()))
+                .linkedTweet(linkedTweet != null ? linkedTweet.toTweet() : null)
+                .date(date.toLocalDateTime())
+                .build();
+        return null;
     }
 }

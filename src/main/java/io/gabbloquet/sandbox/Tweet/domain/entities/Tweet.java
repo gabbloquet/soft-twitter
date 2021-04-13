@@ -15,7 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 public class Tweet {
 
-    private Long id;
+    private String id;
     private User user;
     private String message;
     private List<User> likes;

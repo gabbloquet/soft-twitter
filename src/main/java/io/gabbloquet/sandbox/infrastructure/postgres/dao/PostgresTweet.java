@@ -53,7 +53,7 @@ public class PostgresTweet {
 
     public Tweet toTweet() {
         return new Tweet().builder()
-            .id(id)
+            .id(id.toString())
             .message(message)
             .user(user.toUser())
             .likes(likes.stream().map(PostgresUser::toUser).collect(Collectors.toList()))

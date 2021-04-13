@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,7 +22,7 @@ public class TweetController {
     private final TweetService tweetService;
 
     @PostMapping
-    public Tweet tweeter(Tweet tweet) {
+    public Tweet tweeter(@RequestBody Tweet tweet) {
         return tweetService.createTweet(tweet);
     }
 
