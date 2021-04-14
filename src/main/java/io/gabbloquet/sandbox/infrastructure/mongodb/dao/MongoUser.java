@@ -29,9 +29,8 @@ import java.util.stream.Collectors;
 public class MongoUser {
 
     @Id
-    private String id;
-    private String name;
     private String username;
+    private String name;
     private String mail;
     private String picture;
     private String description;

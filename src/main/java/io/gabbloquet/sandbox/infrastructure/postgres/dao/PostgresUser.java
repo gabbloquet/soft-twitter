@@ -27,10 +27,8 @@ import java.util.stream.Collectors;
 public class PostgresUser {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private Long id;
-    private String name;
     private String username;
+    private String name;
     private String mail;
     private String picture;
     private String description;
