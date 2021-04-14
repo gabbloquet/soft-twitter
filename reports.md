@@ -36,3 +36,5 @@ No crash, stopped at 2:00.
 # First conclusions
 
 NoSQL reacts much better to the increase in load. The application crashes less quickly and generates fewer errors.
+If we take a look to deviation and throughput, difference is huge between both solutions.
+Indeed, i tested it in local environment. We can imagine that behaviour could be different in production. 
