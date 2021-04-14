@@ -51,6 +51,4 @@ Here some common use cases :
 1. mvn spring-boot:run -Dspring-boot.run.profiles=sql
 
 ##### NoSQL
-1. Comment this line : ```@EnableJpaRepositories("io.gabbloquet.sandbox.infrastructure.postgres")
-   @EnableMongoRepositories("io.gabbloquet.sandbox.infrastructure.mongodb")``` (in SandboxApplication.java)
-2. mvn spring-boot:run -Dspring-boot.run.profiles=nosql
+1. mvn spring-boot:run -Dspring-boot.run.profiles=nosql
