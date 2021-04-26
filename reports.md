@@ -59,3 +59,8 @@ Unlike writing, SQL is more responsive to reading.
 Indeed we can see a better throughput and a lower response time (ms in black).
 Further more, we can see that throughput plateau with load.
 
+# Conclusion
+
+For our application, that is to say twitter like, according to me SQL better meets our expectations.
+Indeed, in twitter we read a lot and we do not publish much. 
+So we need a more performant reading than writing. And on this aspect, SQL is better.
