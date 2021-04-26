@@ -34,6 +34,12 @@ Test crashed at 0:50.
 No crash, stopped at 2:00.
 ![image](https://user-images.githubusercontent.com/25029077/114773983-ff97c800-9d6f-11eb-85d2-4c641c96518c.png)
 
+## First conclusions
+
+NoSQL reacts much better to the increase in load. The application crashes less quickly and generates fewer errors.
+If we take a look to deviation and throughput, difference is huge between both solutions.
+Indeed, i tested it in local environment. We can imagine that behaviour could be different in production.
+
 ## Read
 
 ### Get tweets of User
@@ -47,8 +53,9 @@ Test stopped 1min.
 Test stopped 1min.
 ![image](https://user-images.githubusercontent.com/25029077/116113087-75792900-a6b8-11eb-9323-95e9824997cb.png)
 
-# First conclusions
+## First conclusions
 
-NoSQL reacts much better to the increase in load. The application crashes less quickly and generates fewer errors.
-If we take a look to deviation and throughput, difference is huge between both solutions.
-Indeed, i tested it in local environment. We can imagine that behaviour could be different in production. 
+Unlike writing, SQL is more responsive to reading.
+Indeed we can see a better throughput and a lower response time (ms in black).
+Further more, we can see that throughput plateau with load.
+
