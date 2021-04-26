@@ -23,8 +23,8 @@ Test crashed at 1:19.
 
 ### Create Tweet
 
-150 threads (users), 60sec ramp up.
-Here we have a link, because with save the tweet for a given user.
+150 threads (users), 60sec ramp up.  
+Here we have a link, because with save the tweet for a given user.  
 
 #### SQL
 Test crashed at 0:50.
@@ -36,9 +36,9 @@ No crash, stopped at 2:00.
 
 ## First conclusions
 
-NoSQL reacts much better to the increase in load. The application crashes less quickly and generates fewer errors.
-If we take a look to deviation and throughput, difference is huge between both solutions.
-Indeed, i tested it in local environment. We can imagine that behaviour could be different in production.
+NoSQL reacts much better to the increase in load. The application crashes less quickly and generates fewer errors.  
+If we take a look to deviation and throughput, difference is huge between both solutions.  
+Indeed, i tested it in local environment. We can imagine that behaviour could be different in production.  
 
 ## Read
 
@@ -55,12 +55,12 @@ Test stopped 1min.
 
 ## First conclusions
 
-Unlike writing, SQL is more responsive to reading.
-Indeed we can see a better throughput and a lower response time (ms in black).
-Further more, we can see that throughput plateau with load.
+Unlike writing, SQL is more responsive to reading.  
+Indeed we can see a better throughput and a lower response time (ms in black).  
+Further more, we can see that throughput plateau with load.  
 
 # Conclusion
 
-For our application, that is to say twitter like, according to me SQL better meets our expectations.
-Indeed, in twitter we read a lot and we do not publish much. 
-So we need a more performant reading than writing. And on this aspect, SQL is better.
+For our application, that is to say twitter like, according to me SQL better meets our expectations.  
+Indeed, in twitter we read a lot and we do not publish much.  
+So we need a more performant reading than writing. And on this aspect, SQL is better.  
