@@ -58,7 +58,7 @@ public class PostgresUser {
     }
 
     public static PostgresUser fromUser(User user) {
-        return new PostgresUser().builder()
+      PostgresUser postgresUser = new PostgresUser().builder()
             .name(user.getName())
             .username(user.getUsername())
             .mail(user.getMail())
@@ -67,8 +67,15 @@ public class PostgresUser {
             .localisation(user.getLocalisation())
             .birthdate(user.getBirthdate())
             .createdDate(user.getCreatedDate())
-            .followers(user.getFollowers().stream().map(PostgresUser::fromUser).collect(Collectors.toList()))
-            .following(user.getFollowing().stream().map(PostgresUser::fromUser).collect(Collectors.toList()))
             .build();
+
+      if (user.getFollowers() != null) {
+        postgresUser.setFollowers(user.getFollowers().stream().map(PostgresUser::fromUser).collect(Collectors.toList()));
+      }
+      if (user.getFollowing() != null) {
+        postgresUser.setFollowing(user.getFollowing().stream().map(PostgresUser::fromUser).collect(Collectors.toList()));
+      }
+
+      return postgresUser;
     }
 }

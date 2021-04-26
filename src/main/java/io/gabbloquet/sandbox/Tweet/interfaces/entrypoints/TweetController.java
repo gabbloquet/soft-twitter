@@ -6,6 +6,7 @@ import io.gabbloquet.sandbox.User.domain.entities.User;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,9 +32,9 @@ public class TweetController {
         return tweetService.getTweets();
     }
 
-    @GetMapping("/user")
-    public List<Tweet> getTweets(User user) {
-        return tweetService.getTweets(user);
+    @GetMapping("/user/{username}")
+    public List<Tweet> getTweets(@PathVariable String username) {
+        return tweetService.getTweets(username);
     }
 
     @DeleteMapping

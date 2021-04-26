@@ -29,8 +29,9 @@ public class TweetServiceImpl implements TweetService {
     }
 
     @Override
-    public List<Tweet> getTweets(User user) {
-        return tweetRepository.find(user);
+    public List<Tweet> getTweets(String username) {
+      User user = User.builder().username(username).build();
+      return tweetRepository.find(user);
     }
 
     @Override

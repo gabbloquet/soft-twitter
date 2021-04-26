@@ -1,6 +1,7 @@
 package io.gabbloquet.sandbox.infrastructure.mongodb.dao;
 
 import io.gabbloquet.sandbox.User.domain.entities.User;
+import io.gabbloquet.sandbox.infrastructure.postgres.dao.PostgresUser;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -59,18 +60,25 @@ public class MongoUser {
             .build();
     }
 
-    public static MongoUser fromUser(User user) {
-        return new MongoUser().builder()
-            .name(user.getName())
-            .username(user.getUsername())
-            .mail(user.getMail())
-            .picture(user.getPicture())
-            .description(user.getDescription())
-            .localisation(user.getLocalisation())
-            .birthdate(user.getBirthdate())
-            .createdDate(user.getCreatedDate())
-            .followers(user.getFollowers().stream().map(MongoUser::fromUser).collect(Collectors.toList()))
-            .following(user.getFollowing().stream().map(MongoUser::fromUser).collect(Collectors.toList()))
-            .build();
+  public static MongoUser fromUser(User user) {
+    MongoUser mongoUser = new MongoUser().builder()
+      .name(user.getName())
+      .username(user.getUsername())
+      .mail(user.getMail())
+      .picture(user.getPicture())
+      .description(user.getDescription())
+      .localisation(user.getLocalisation())
+      .birthdate(user.getBirthdate())
+      .createdDate(user.getCreatedDate())
+      .build();
+
+    if (user.getFollowers() != null) {
+      mongoUser.setFollowers(user.getFollowers().stream().map(MongoUser::fromUser).collect(Collectors.toList()));
     }
+    if (user.getFollowing() != null) {
+      mongoUser.setFollowing(user.getFollowing().stream().map(MongoUser::fromUser).collect(Collectors.toList()));
+    }
+
+    return mongoUser;
+  }
 }
