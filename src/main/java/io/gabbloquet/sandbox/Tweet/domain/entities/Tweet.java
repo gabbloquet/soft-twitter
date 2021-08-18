@@ -1,6 +1,7 @@
 package io.gabbloquet.sandbox.Tweet.domain.entities;
 
 import io.gabbloquet.sandbox.User.domain.entities.User;
+import io.gabbloquet.sandbox.utils.UrlService;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -22,4 +23,11 @@ public class Tweet {
     private Tweet linkedTweet;
     private LocalDateTime date;
 
+    public String getUrl() {
+        return UrlService.extractUrl(message);
+    }
+
+    public void replaceUrlBy(String shortUrl) {
+        message.replace(UrlService.extractUrl(message), shortUrl);
+    }
 }
